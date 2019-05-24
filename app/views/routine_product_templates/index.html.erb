@@ -66,19 +66,31 @@
 
         <!-- Display routine_product.routine_id start -->
         <td>
-          <%= routine_product.routine.customer_id %>
+          <% if routine_product.routine.present? %>
+            <a href="/routines/<%= routine_product.routine.id %>">
+              <%= routine_product.routine.customer_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display routine_product.routine_id end -->
 
         <!-- Display routine_product.product_id start -->
         <td>
-          <%= routine_product.product.name %>
+          <% if routine_product.product.present? %>
+            <a href="/products/<%= routine_product.product.id %>">
+              <%= routine_product.product.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display routine_product.product_id end -->
 
         <!-- Display routine_product.use_frequency_id start -->
         <td>
-          <%= routine_product.use_frequency.description %>
+          <% if routine_product.use_frequency.present? %>
+            <a href="/usefrequencies/<%= routine_product.use_frequency.id %>">
+              <%= routine_product.use_frequency.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display routine_product.use_frequency_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display concern_id start -->
       <dd>
-        <%= @product_concern.concern_id %>
+        <% if @product_concern.concern.present? %>
+          <a href="/concerns/<%= @product_concern.concern_id %>">
+            <%= @product_concern.concern.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display concern_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display product_id start -->
       <dd>
-        <%= @product_concern.product_id %>
+        <% if @product_concern.product.present? %>
+          <a href="/products/<%= @product_concern.product_id %>">
+            <%= @product_concern.product.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display product_id end -->
 

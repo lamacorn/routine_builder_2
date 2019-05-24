@@ -62,13 +62,21 @@
 
         <!-- Display product_concern.concern_id start -->
         <td>
-          <%= product_concern.concern.name %>
+          <% if product_concern.concern.present? %>
+            <a href="/concerns/<%= product_concern.concern.id %>">
+              <%= product_concern.concern.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display product_concern.concern_id end -->
 
         <!-- Display product_concern.product_id start -->
         <td>
-          <%= product_concern.product.name %>
+          <% if product_concern.product.present? %>
+            <a href="/products/<%= product_concern.product.id %>">
+              <%= product_concern.product.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display product_concern.product_id end -->
 

@@ -76,7 +76,11 @@
 
         <!-- Display product.category_id start -->
         <td>
-          <%= product.category.name %>
+          <% if product.category.present? %>
+            <a href="/categories/<%= product.category.id %>">
+              <%= product.category.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display product.category_id end -->
 
