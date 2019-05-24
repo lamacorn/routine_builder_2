@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Usefrequency resource:
+
+  # CREATE
+  get("/usefrequencies/new", { :controller => "usefrequencies", :action => "new_form" })
+  post("/create_usefrequency", { :controller => "usefrequencies", :action => "create_row" })
+
+  # READ
+  get("/usefrequencies", { :controller => "usefrequencies", :action => "index" })
+  get("/usefrequencies/:id_to_display", { :controller => "usefrequencies", :action => "show" })
+
+  # UPDATE
+  get("/usefrequencies/:prefill_with_id/edit", { :controller => "usefrequencies", :action => "edit_form" })
+  post("/update_usefrequency/:id_to_modify", { :controller => "usefrequencies", :action => "update_row" })
+
+  # DELETE
+  get("/delete_usefrequency/:id_to_remove", { :controller => "usefrequencies", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Routine product resource:
 
   # CREATE
