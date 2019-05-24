@@ -1,6 +1,6 @@
 class RoutinesController < ApplicationController
   def index
-    @routines = Routine.all
+    @routines = Routine.page(params[:page]).per(10)
 
     render("routine_templates/index.html.erb")
   end

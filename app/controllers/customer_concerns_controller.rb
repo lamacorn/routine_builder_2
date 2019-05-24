@@ -1,6 +1,6 @@
 class CustomerConcernsController < ApplicationController
   def index
-    @customer_concerns = CustomerConcern.all
+    @customer_concerns = CustomerConcern.page(params[:page]).per(10)
 
     render("customer_concern_templates/index.html.erb")
   end

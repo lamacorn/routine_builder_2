@@ -1,6 +1,6 @@
 class UsefrequenciesController < ApplicationController
   def index
-    @usefrequencies = Usefrequency.all
+    @usefrequencies = Usefrequency.page(params[:page]).per(10)
 
     render("usefrequency_templates/index.html.erb")
   end
