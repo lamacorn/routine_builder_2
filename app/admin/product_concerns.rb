@@ -1,4 +1,6 @@
 ActiveAdmin.register ProductConcern do
+
+ permit_params :concern_id, :product_id, :good_for
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
