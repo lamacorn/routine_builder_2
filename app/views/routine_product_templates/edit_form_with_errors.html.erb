@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for use_frequency_id start -->
-    <input type="text" id="use_frequency_id" name="use_frequency_id" class="form-control" value="<%= @routine_product.use_frequency_id %>">
+    <%= select_tag(:use_frequency_id, options_from_collection_for_select(Usefrequency.all, :id, :description, @routine_product.use_frequency_id), :class => "form-control") %>
     <!-- Input for use_frequency_id end -->
   </div>
   <!-- Label and input for use_frequency_id end -->
