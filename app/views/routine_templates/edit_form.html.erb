@@ -1,0 +1,43 @@
+<h1>
+  Edit routine #<%= @routine.id %>
+</h1>
+
+<hr>
+
+<!-- Form routine start -->
+<form action="/update_routine/<%= @routine.id %>" method="post">
+<!-- Form routine end -->
+
+  <!-- Label and input for customer_id start -->
+  <div class="form-group">
+    <label for="customer_id">
+      Customer
+    </label>
+
+    <!-- Input for customer_id start -->
+    <input type="text" id="customer_id" name="customer_id" class="form-control" value="<%= @routine.customer_id %>">
+    <!-- Input for customer_id end -->
+  </div>
+  <!-- Label and input for customer_id end -->
+
+  <!-- Label and input for active start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="active">
+    <!-- Input for active start -->
+    <input id="active" class="form-check-input" name="active" type="checkbox" value="1" <%= "checked" if @routine.active %>>
+    <!-- Input for active end -->
+    <label for="active" class="form-check-label">
+      Active
+    </label>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update routine
+  </button>
+</form>
+
+<hr>
+
+<a href="/routines">
+  Go back
+</a>
