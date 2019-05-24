@@ -1,6 +1,7 @@
 class UsefrequenciesController < ApplicationController
   def index
-    @usefrequencies = Usefrequency.page(params[:page]).per(10)
+    @q = Usefrequency.ransack(params[:q])
+    @usefrequencies = @q.result(:distinct => true).includes(:routine_products).page(params[:page]).per(10)
 
     render("usefrequency_templates/index.html.erb")
   end

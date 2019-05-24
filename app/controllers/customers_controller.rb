@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
   def index
-    @customers = Customer.page(params[:page]).per(10)
+    @q = Customer.ransack(params[:q])
+    @customers = @q.result(:distinct => true).includes(:routines, :customer_concerns).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@customers.where.not(:address_street_latitude => nil)) do |customer, marker|
       marker.lat customer.address_street_latitude
       marker.lng customer.address_street_longitude
