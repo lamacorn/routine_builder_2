@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/product_concerns/new", { :controller => "product_concerns", :action => "new_form" })
   post("/create_product_concern", { :controller => "product_concerns", :action => "create_row" })
+  post("/create_product_concern_from_concern", { :controller => "product_concerns", :action => "create_row_from_concern" })
+  post("/create_product_concern_from_product", { :controller => "product_concerns", :action => "create_row_from_product" })
 
   # READ
   get("/product_concerns", { :controller => "product_concerns", :action => "index" })
@@ -27,6 +29,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/customer_concerns/new", { :controller => "customer_concerns", :action => "new_form" })
   post("/create_customer_concern", { :controller => "customer_concerns", :action => "create_row" })
+  post("/create_customer_concern_from_concern", { :controller => "customer_concerns", :action => "create_row_from_concern" })
+  post("/create_customer_concern_from_customer", { :controller => "customer_concerns", :action => "create_row_from_customer" })
 
   # READ
   get("/customer_concerns", { :controller => "customer_concerns", :action => "index" })
@@ -86,6 +90,9 @@ Rails.application.routes.draw do
   # CREATE
   get("/routine_products/new", { :controller => "routine_products", :action => "new_form" })
   post("/create_routine_product", { :controller => "routine_products", :action => "create_row" })
+  post("/create_routine_product_from_usefrequency", { :controller => "routine_products", :action => "create_row_from_usefrequency" })
+  post("/create_routine_product_from_routine", { :controller => "routine_products", :action => "create_row_from_routine" })
+  post("/create_routine_product_from_product", { :controller => "routine_products", :action => "create_row_from_product" })
 
   # READ
   get("/routine_products", { :controller => "routine_products", :action => "index" })
@@ -108,6 +115,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/routines/new", { :controller => "routines", :action => "new_form" })
   post("/create_routine", { :controller => "routines", :action => "create_row" })
+  post("/create_routine_from_customer", { :controller => "routines", :action => "create_row_from_customer" })
 
   # READ
   get("/routines", { :controller => "routines", :action => "index" })
@@ -147,6 +155,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/products/new", { :controller => "products", :action => "new_form" })
   post("/create_product", { :controller => "products", :action => "create_row" })
+  post("/create_product_from_category", { :controller => "products", :action => "create_row_from_category" })
 
   # READ
   get("/products", { :controller => "products", :action => "index" })

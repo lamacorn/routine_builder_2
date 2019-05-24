@@ -6,6 +6,7 @@ class RoutinesController < ApplicationController
   end
 
   def show
+    @routine_product = RoutineProduct.new
     @routine = Routine.find(params.fetch("id_to_display"))
 
     render("routine_templates/show.html.erb")
@@ -27,6 +28,21 @@ class RoutinesController < ApplicationController
       @routine.save
 
       redirect_back(:fallback_location => "/routines", :notice => "Routine created successfully.")
+    else
+      render("routine_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_customer
+    @routine = Routine.new
+
+    @routine.customer_id = params.fetch("customer_id")
+    @routine.active = params.fetch("active")
+
+    if @routine.valid?
+      @routine.save
+
+      redirect_to("/customers/#{@routine.customer_id}", notice: "Routine created successfully.")
     else
       render("routine_templates/new_form_with_errors.html.erb")
     end

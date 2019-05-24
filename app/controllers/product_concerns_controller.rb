@@ -33,6 +33,38 @@ class ProductConcernsController < ApplicationController
     end
   end
 
+  def create_row_from_product
+    @product_concern = ProductConcern.new
+
+    @product_concern.concern_id = params.fetch("concern_id")
+    @product_concern.product_id = params.fetch("product_id")
+    @product_concern.good_for = params.fetch("good_for")
+
+    if @product_concern.valid?
+      @product_concern.save
+
+      redirect_to("/products/#{@product_concern.product_id}", notice: "ProductConcern created successfully.")
+    else
+      render("product_concern_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_concern
+    @product_concern = ProductConcern.new
+
+    @product_concern.concern_id = params.fetch("concern_id")
+    @product_concern.product_id = params.fetch("product_id")
+    @product_concern.good_for = params.fetch("good_for")
+
+    if @product_concern.valid?
+      @product_concern.save
+
+      redirect_to("/concerns/#{@product_concern.concern_id}", notice: "ProductConcern created successfully.")
+    else
+      render("product_concern_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @product_concern = ProductConcern.find(params.fetch("prefill_with_id"))
 

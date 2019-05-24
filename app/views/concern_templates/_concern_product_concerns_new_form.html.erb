@@ -1,0 +1,35 @@
+<!-- Form product_concern start -->
+<form action="/create_product_concern_from_concern" method="post">
+<!-- Form product_concern end -->
+
+  <!-- Label and input for concern_id start -->
+  <!-- Input for concern_id start -->
+  <input type="hidden" name="concern_id" value="<%= @concern.id %>">
+  <!-- Input for concern_id end -->
+
+  <!-- Label and input for product_id start -->
+  <div class="form-group">
+    <label for="product_id">
+      Product
+    </label>
+
+    <!-- Input for product_id start -->
+    <input type="text" id="product_id" name="product_id" class="form-control" value="<%= @product_concern.product_id %>">
+    <!-- Input for product_id end -->
+  </div>
+  <!-- Label and input for product_id end -->
+
+  <!-- Label and input for good_for start -->
+  <div class="form-group">
+    <label for="good_for">
+      Good for
+    </label>
+    <!-- Input for good_for start -->
+    <input id="good_for" class="form-check-input" name="good_for" type="checkbox" <%= "checked" if @product_concern.good_for %>>
+    <!-- Input for good_for end -->
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create product concern
+  </button>
+</form>

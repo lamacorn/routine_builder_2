@@ -6,6 +6,8 @@ class CustomersController < ApplicationController
   end
 
   def show
+    @customer_concern = CustomerConcern.new
+    @routine = Routine.new
     @customer = Customer.find(params.fetch("id_to_display"))
 
     render("customer_templates/show.html.erb")

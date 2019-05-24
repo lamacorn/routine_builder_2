@@ -1,0 +1,23 @@
+<!-- Form routine start -->
+<form action="/create_routine_from_customer" method="post">
+<!-- Form routine end -->
+
+  <!-- Label and input for customer_id start -->
+  <!-- Input for customer_id start -->
+  <input type="hidden" name="customer_id" value="<%= @customer.id %>">
+  <!-- Input for customer_id end -->
+
+  <!-- Label and input for active start -->
+  <div class="form-group">
+    <label for="active">
+      Active
+    </label>
+    <!-- Input for active start -->
+    <input id="active" class="form-check-input" name="active" type="checkbox" <%= "checked" if @routine.active %>>
+    <!-- Input for active end -->
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create routine
+  </button>
+</form>

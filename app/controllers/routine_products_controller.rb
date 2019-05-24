@@ -34,6 +34,57 @@ class RoutineProductsController < ApplicationController
     end
   end
 
+  def create_row_from_product
+    @routine_product = RoutineProduct.new
+
+    @routine_product.routine_id = params.fetch("routine_id")
+    @routine_product.product_id = params.fetch("product_id")
+    @routine_product.use_frequency_id = params.fetch("use_frequency_id")
+    @routine_product.note = params.fetch("note")
+
+    if @routine_product.valid?
+      @routine_product.save
+
+      redirect_to("/products/#{@routine_product.product_id}", notice: "RoutineProduct created successfully.")
+    else
+      render("routine_product_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_routine
+    @routine_product = RoutineProduct.new
+
+    @routine_product.routine_id = params.fetch("routine_id")
+    @routine_product.product_id = params.fetch("product_id")
+    @routine_product.use_frequency_id = params.fetch("use_frequency_id")
+    @routine_product.note = params.fetch("note")
+
+    if @routine_product.valid?
+      @routine_product.save
+
+      redirect_to("/routines/#{@routine_product.routine_id}", notice: "RoutineProduct created successfully.")
+    else
+      render("routine_product_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_usefrequency
+    @routine_product = RoutineProduct.new
+
+    @routine_product.routine_id = params.fetch("routine_id")
+    @routine_product.product_id = params.fetch("product_id")
+    @routine_product.use_frequency_id = params.fetch("use_frequency_id")
+    @routine_product.note = params.fetch("note")
+
+    if @routine_product.valid?
+      @routine_product.save
+
+      redirect_to("/usefrequencies/#{@routine_product.use_frequency_id}", notice: "RoutineProduct created successfully.")
+    else
+      render("routine_product_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @routine_product = RoutineProduct.find(params.fetch("prefill_with_id"))
 

@@ -6,6 +6,7 @@ class UsefrequenciesController < ApplicationController
   end
 
   def show
+    @routine_product = RoutineProduct.new
     @usefrequency = Usefrequency.find(params.fetch("id_to_display"))
 
     render("usefrequency_templates/show.html.erb")
