@@ -1,6 +1,11 @@
 class CustomersController < ApplicationController
   def index
     @customers = Customer.all
+    @location_hash = Gmaps4rails.build_markers(@customers.where.not(:address_street_latitude => nil)) do |customer, marker|
+      marker.lat customer.address_street_latitude
+      marker.lng customer.address_street_longitude
+      marker.infowindow "<h5><a href='/customers/#{customer.id}'>#{customer.email}</a></h5><small>#{customer.address_street_formatted_address}</small>"
+    end
 
     render("customer_templates/index.html.erb")
   end

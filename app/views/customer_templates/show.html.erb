@@ -79,7 +79,9 @@
       </dt>
       <!-- Display address_street start -->
       <dd>
-        <%= @customer.address_street %>
+        <div>
+          <%= render partial: "customer_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address_street end -->
 
