@@ -55,6 +55,22 @@ class ProductConcernsController < ApplicationController
     end
   end
 
+  def destroy_row_from_product
+    @product_concern = ProductConcern.find(params.fetch("id_to_remove"))
+
+    @product_concern.destroy
+
+    redirect_to("/products/#{@product_concern.product_id}", notice: "ProductConcern deleted successfully.")
+  end
+
+  def destroy_row_from_concern
+    @product_concern = ProductConcern.find(params.fetch("id_to_remove"))
+
+    @product_concern.destroy
+
+    redirect_to("/concerns/#{@product_concern.concern_id}", notice: "ProductConcern deleted successfully.")
+  end
+
   def destroy_row
     @product_concern = ProductConcern.find(params.fetch("id_to_remove"))
 

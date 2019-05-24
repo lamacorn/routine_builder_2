@@ -57,6 +57,30 @@ class RoutineProductsController < ApplicationController
     end
   end
 
+  def destroy_row_from_product
+    @routine_product = RoutineProduct.find(params.fetch("id_to_remove"))
+
+    @routine_product.destroy
+
+    redirect_to("/products/#{@routine_product.product_id}", notice: "RoutineProduct deleted successfully.")
+  end
+
+  def destroy_row_from_routine
+    @routine_product = RoutineProduct.find(params.fetch("id_to_remove"))
+
+    @routine_product.destroy
+
+    redirect_to("/routines/#{@routine_product.routine_id}", notice: "RoutineProduct deleted successfully.")
+  end
+
+  def destroy_row_from_use_frequency
+    @routine_product = RoutineProduct.find(params.fetch("id_to_remove"))
+
+    @routine_product.destroy
+
+    redirect_to("/usefrequencies/#{@routine_product.use_frequency_id}", notice: "RoutineProduct deleted successfully.")
+  end
+
   def destroy_row
     @routine_product = RoutineProduct.find(params.fetch("id_to_remove"))
 
