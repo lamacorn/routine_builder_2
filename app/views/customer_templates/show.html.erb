@@ -1,0 +1,172 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Customer #<%= @customer.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/customers" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link customer start -->
+      <div class="col">
+        <a href="/customers/<%= @customer.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit customer
+        </a>
+      </div>
+      <!-- Edit link customer end -->
+
+      <!-- Delete link customer start -->
+      <div class="col">
+        <a href="/delete_customer/<%= @customer.id %>" class="btn btn-block btn-outline-secondary">
+          Delete customer
+        </a>
+      </div>
+      <!-- Delete link customer end -->
+    </div>
+
+    <dl>
+      <dt>
+        Email
+      </dt>
+      <!-- Display email start -->
+      <dd>
+        <%= @customer.email %>
+      </dd>
+      <!-- Display email end -->
+
+      <dt>
+        Firstname
+      </dt>
+      <!-- Display firstname start -->
+      <dd>
+        <%= @customer.firstname %>
+      </dd>
+      <!-- Display firstname end -->
+
+      <dt>
+        Lastname
+      </dt>
+      <!-- Display lastname start -->
+      <dd>
+        <%= @customer.lastname %>
+      </dd>
+      <!-- Display lastname end -->
+
+      <dt>
+        Profile photo
+      </dt>
+      <!-- Display profile_photo start -->
+      <dd>
+        <%= @customer.profile_photo %>
+      </dd>
+      <!-- Display profile_photo end -->
+
+      <dt>
+        Birthday
+      </dt>
+      <!-- Display birthday start -->
+      <dd>
+        <%= @customer.birthday %>
+      </dd>
+      <!-- Display birthday end -->
+
+      <dt>
+        Address street
+      </dt>
+      <!-- Display address_street start -->
+      <dd>
+        <%= @customer.address_street %>
+      </dd>
+      <!-- Display address_street end -->
+
+      <dt>
+        Address city
+      </dt>
+      <!-- Display address_city start -->
+      <dd>
+        <%= @customer.address_city %>
+      </dd>
+      <!-- Display address_city end -->
+
+      <dt>
+        Address state
+      </dt>
+      <!-- Display address_state start -->
+      <dd>
+        <%= @customer.address_state %>
+      </dd>
+      <!-- Display address_state end -->
+
+      <dt>
+        Address zipcode
+      </dt>
+      <!-- Display address_zipcode start -->
+      <dd>
+        <%= @customer.address_zipcode %>
+      </dd>
+      <!-- Display address_zipcode end -->
+
+      <dt>
+        Notes
+      </dt>
+      <!-- Display notes start -->
+      <dd>
+        <%= @customer.notes %>
+      </dd>
+      <!-- Display notes end -->
+
+      <dt>
+        Optin email
+      </dt>
+      <!-- Display optin_email start -->
+      <dd>
+        <%= @customer.optin_email %>
+      </dd>
+      <!-- Display optin_email end -->
+
+      <dt>
+        Optin texts
+      </dt>
+      <!-- Display optin_texts start -->
+      <dd>
+        <%= @customer.optin_texts %>
+      </dd>
+      <!-- Display optin_texts end -->
+
+      <dt>
+        Phone
+      </dt>
+      <!-- Display phone start -->
+      <dd>
+        <%= @customer.phone %>
+      </dd>
+      <!-- Display phone end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@customer.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@customer.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

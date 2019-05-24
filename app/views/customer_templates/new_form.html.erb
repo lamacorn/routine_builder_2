@@ -1,0 +1,175 @@
+<h1>
+  Add a new customer
+</h1>
+
+
+<hr>
+
+<!-- Form customer start -->
+<form action="/create_customer" method="post">
+<!-- Form customer end -->
+
+  <!-- Label and input for email start -->
+  <div class="form-group">
+    <label for="email">
+      Email
+    </label>
+
+    <!-- Input for email start -->
+    <textarea id="email" name="email" class="form-control" rows="3"></textarea>
+    <!-- Input for email end -->
+  </div>
+  <!-- Label and input for email end -->
+
+  <!-- Label and input for firstname start -->
+  <div class="form-group">
+    <label for="firstname">
+      Firstname
+    </label>
+
+    <!-- Input for firstname start -->
+    <input type="text" id="firstname" name="firstname" class="form-control">
+    <!-- Input for firstname end -->
+  </div>
+  <!-- Label and input for firstname end -->
+
+  <!-- Label and input for lastname start -->
+  <div class="form-group">
+    <label for="lastname">
+      Lastname
+    </label>
+
+    <!-- Input for lastname start -->
+    <input type="text" id="lastname" name="lastname" class="form-control">
+    <!-- Input for lastname end -->
+  </div>
+  <!-- Label and input for lastname end -->
+
+  <!-- Label and input for profile_photo start -->
+  <div class="form-group">
+    <label for="profile_photo">
+      Profile photo
+    </label>
+
+    <!-- Input for profile_photo start -->
+    <input type="text" id="profile_photo" name="profile_photo" class="form-control">
+    <!-- Input for profile_photo end -->
+  </div>
+  <!-- Label and input for profile_photo end -->
+
+  <!-- Label and input for birthday start -->
+  <div class="form-group">
+    <label for="birthday">
+      Birthday
+    </label>
+
+    <!-- Input for birthday start -->
+    <input type="text" id="birthday" name="birthday" class="form-control">
+    <!-- Input for birthday end -->
+  </div>
+  <!-- Label and input for birthday end -->
+
+  <!-- Label and input for address_street start -->
+  <div class="form-group">
+    <label for="address_street">
+      Address street
+    </label>
+
+    <!-- Input for address_street start -->
+    <input type="text" id="address_street" name="address_street" class="form-control">
+    <!-- Input for address_street end -->
+  </div>
+  <!-- Label and input for address_street end -->
+
+  <!-- Label and input for address_city start -->
+  <div class="form-group">
+    <label for="address_city">
+      Address city
+    </label>
+
+    <!-- Input for address_city start -->
+    <input type="text" id="address_city" name="address_city" class="form-control">
+    <!-- Input for address_city end -->
+  </div>
+  <!-- Label and input for address_city end -->
+
+  <!-- Label and input for address_state start -->
+  <div class="form-group">
+    <label for="address_state">
+      Address state
+    </label>
+
+    <!-- Input for address_state start -->
+    <input type="text" id="address_state" name="address_state" class="form-control">
+    <!-- Input for address_state end -->
+  </div>
+  <!-- Label and input for address_state end -->
+
+  <!-- Label and input for address_zipcode start -->
+  <div class="form-group">
+    <label for="address_zipcode">
+      Address zipcode
+    </label>
+
+    <!-- Input for address_zipcode start -->
+    <input type="text" id="address_zipcode" name="address_zipcode" class="form-control">
+    <!-- Input for address_zipcode end -->
+  </div>
+  <!-- Label and input for address_zipcode end -->
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <textarea id="notes" name="notes" class="form-control" rows="3"></textarea>
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <!-- Label and input for optin_email start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="optin_email">
+    <!-- Input for optin_email start -->
+    <input id="optin_email" class="form-check-input" name="optin_email" type="checkbox">
+    <!-- Input for optin_email end -->
+    <label for="optin_email" class="form-check-label">
+      Optin email
+    </label>
+  </div>
+
+  <!-- Label and input for optin_texts start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="optin_texts">
+    <!-- Input for optin_texts start -->
+    <input id="optin_texts" class="form-check-input" name="optin_texts" type="checkbox">
+    <!-- Input for optin_texts end -->
+    <label for="optin_texts" class="form-check-label">
+      Optin texts
+    </label>
+  </div>
+
+  <!-- Label and input for phone start -->
+  <div class="form-group">
+    <label for="phone">
+      Phone
+    </label>
+
+    <!-- Input for phone start -->
+    <input type="text" id="phone" name="phone" class="form-control">
+    <!-- Input for phone end -->
+  </div>
+  <!-- Label and input for phone end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create customer
+  </button>
+</form>
+
+<hr>
+
+<a href="/customers">
+  Go back
+</a>
