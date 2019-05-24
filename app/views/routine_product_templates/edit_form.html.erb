@@ -1,0 +1,68 @@
+<h1>
+  Edit routine product #<%= @routine_product.id %>
+</h1>
+
+<hr>
+
+<!-- Form routine_product start -->
+<form action="/update_routine_product/<%= @routine_product.id %>" method="post">
+<!-- Form routine_product end -->
+
+  <!-- Label and input for routine_id start -->
+  <div class="form-group">
+    <label for="routine_id">
+      Routine
+    </label>
+
+    <!-- Input for routine_id start -->
+    <input type="text" id="routine_id" name="routine_id" class="form-control" value="<%= @routine_product.routine_id %>">
+    <!-- Input for routine_id end -->
+  </div>
+  <!-- Label and input for routine_id end -->
+
+  <!-- Label and input for product_id start -->
+  <div class="form-group">
+    <label for="product_id">
+      Product
+    </label>
+
+    <!-- Input for product_id start -->
+    <input type="text" id="product_id" name="product_id" class="form-control" value="<%= @routine_product.product_id %>">
+    <!-- Input for product_id end -->
+  </div>
+  <!-- Label and input for product_id end -->
+
+  <!-- Label and input for use_frequency_id start -->
+  <div class="form-group">
+    <label for="use_frequency_id">
+      Use frequency
+    </label>
+
+    <!-- Input for use_frequency_id start -->
+    <input type="text" id="use_frequency_id" name="use_frequency_id" class="form-control" value="<%= @routine_product.use_frequency_id %>">
+    <!-- Input for use_frequency_id end -->
+  </div>
+  <!-- Label and input for use_frequency_id end -->
+
+  <!-- Label and input for note start -->
+  <div class="form-group">
+    <label for="note">
+      Note
+    </label>
+
+    <!-- Input for note start -->
+    <textarea id="note" name="note" class="form-control" rows="3"><%= @routine_product.note %></textarea>
+    <!-- Input for note end -->
+  </div>
+  <!-- Label and input for note end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update routine product
+  </button>
+</form>
+
+<hr>
+
+<a href="/routine_products">
+  Go back
+</a>
