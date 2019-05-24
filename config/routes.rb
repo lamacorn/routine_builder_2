@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Product concern resource:
+
+  # CREATE
+  get("/product_concerns/new", { :controller => "product_concerns", :action => "new_form" })
+  post("/create_product_concern", { :controller => "product_concerns", :action => "create_row" })
+
+  # READ
+  get("/product_concerns", { :controller => "product_concerns", :action => "index" })
+  get("/product_concerns/:id_to_display", { :controller => "product_concerns", :action => "show" })
+
+  # UPDATE
+  get("/product_concerns/:prefill_with_id/edit", { :controller => "product_concerns", :action => "edit_form" })
+  post("/update_product_concern/:id_to_modify", { :controller => "product_concerns", :action => "update_row" })
+
+  # DELETE
+  get("/delete_product_concern/:id_to_remove", { :controller => "product_concerns", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Customer concern resource:
 
   # CREATE

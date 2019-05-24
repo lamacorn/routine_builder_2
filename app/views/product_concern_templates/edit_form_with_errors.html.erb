@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @product_concern.errors.any? %>
+  <% @product_concern.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit product concern #<%= @product_concern.id %>
+</h1>
+
+<hr>
+
+<!-- Form product_concern start -->
+<form action="/update_product_concern/<%= @product_concern.id %>" method="post">
+<!-- Form product_concern end -->
+
+  <!-- Label and input for concern_id start -->
+  <div class="form-group">
+    <label for="concern_id">
+      Concern
+    </label>
+
+    <!-- Input for concern_id start -->
+    <input type="text" id="concern_id" name="concern_id" class="form-control" value="<%= @product_concern.concern_id %>">
+    <!-- Input for concern_id end -->
+  </div>
+  <!-- Label and input for concern_id end -->
+
+  <!-- Label and input for product_id start -->
+  <div class="form-group">
+    <label for="product_id">
+      Product
+    </label>
+
+    <!-- Input for product_id start -->
+    <input type="text" id="product_id" name="product_id" class="form-control" value="<%= @product_concern.product_id %>">
+    <!-- Input for product_id end -->
+  </div>
+  <!-- Label and input for product_id end -->
+
+  <!-- Label and input for good_for start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="good_for">
+    <!-- Input for good_for start -->
+    <input id="good_for" class="form-check-input" name="good_for" type="checkbox" value="1" <%= "checked" if @product_concern.good_for %>>
+    <!-- Input for good_for end -->
+    <label for="good_for" class="form-check-label">
+      Good for
+    </label>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update product concern
+  </button>
+</form>
+
+<hr>
+
+<a href="/product_concerns">
+  Go back
+</a>

@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Product concern #<%= @product_concern.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/product_concerns" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link product_concern start -->
+      <div class="col">
+        <a href="/product_concerns/<%= @product_concern.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit product concern
+        </a>
+      </div>
+      <!-- Edit link product_concern end -->
+
+      <!-- Delete link product_concern start -->
+      <div class="col">
+        <a href="/delete_product_concern/<%= @product_concern.id %>" class="btn btn-block btn-outline-secondary">
+          Delete product concern
+        </a>
+      </div>
+      <!-- Delete link product_concern end -->
+    </div>
+
+    <dl>
+      <dt>
+        Concern
+      </dt>
+      <!-- Display concern_id start -->
+      <dd>
+        <%= @product_concern.concern_id %>
+      </dd>
+      <!-- Display concern_id end -->
+
+      <dt>
+        Product
+      </dt>
+      <!-- Display product_id start -->
+      <dd>
+        <%= @product_concern.product_id %>
+      </dd>
+      <!-- Display product_id end -->
+
+      <dt>
+        Good for
+      </dt>
+      <!-- Display good_for start -->
+      <dd>
+        <%= @product_concern.good_for %>
+      </dd>
+      <!-- Display good_for end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@product_concern.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@product_concern.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
