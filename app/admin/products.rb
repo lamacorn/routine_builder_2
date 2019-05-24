@@ -1,4 +1,6 @@
 ActiveAdmin.register Product do
+
+ permit_params :name, :category_id, :average_price, :product_image, :purchase_link
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
