@@ -1,4 +1,6 @@
 class Customer < ApplicationRecord
+  mount_uploader :profile_photo, ProfilePhotoUploader
+
   # Direct associations
 
   has_many   :customer_concerns,

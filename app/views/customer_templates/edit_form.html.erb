@@ -5,7 +5,7 @@
 <hr>
 
 <!-- Form customer start -->
-<form action="/update_customer/<%= @customer.id %>" method="post">
+<form action="/update_customer/<%= @customer.id %>" method="post" enctype="multipart/form-data">
 <!-- Form customer end -->
 
   <!-- Label and input for email start -->
@@ -51,7 +51,8 @@
     </label>
 
     <!-- Input for profile_photo start -->
-    <input type="text" id="profile_photo" name="profile_photo" class="form-control" value="<%= @customer.profile_photo %>">
+    <%= cl_image_tag(@customer.profile_photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="profile_photo" name="profile_photo" class="form-control">
     <!-- Input for profile_photo end -->
   </div>
   <!-- Label and input for profile_photo end -->

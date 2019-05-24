@@ -24,7 +24,7 @@ class ConcernsController < ApplicationController
 
     @concern.name = params.fetch("name")
     @concern.description = params.fetch("description")
-    @concern.example_photo = params.fetch("example_photo")
+    @concern.example_photo = params.fetch("example_photo") if params.key?("example_photo")
 
     if @concern.valid?
       @concern.save
@@ -46,7 +46,7 @@ class ConcernsController < ApplicationController
 
     @concern.name = params.fetch("name")
     @concern.description = params.fetch("description")
-    @concern.example_photo = params.fetch("example_photo")
+    @concern.example_photo = params.fetch("example_photo") if params.key?("example_photo")
 
     if @concern.valid?
       @concern.save

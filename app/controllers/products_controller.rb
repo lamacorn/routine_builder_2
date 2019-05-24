@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
     @product.name = params.fetch("name")
     @product.category_id = params.fetch("category_id")
     @product.average_price = params.fetch("average_price")
-    @product.product_image = params.fetch("product_image")
+    @product.product_image = params.fetch("product_image") if params.key?("product_image")
     @product.purchase_link = params.fetch("purchase_link")
 
     if @product.valid?
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
     @product.name = params.fetch("name")
     @product.category_id = params.fetch("category_id")
     @product.average_price = params.fetch("average_price")
-    @product.product_image = params.fetch("product_image")
+    @product.product_image = params.fetch("product_image") if params.key?("product_image")
     @product.purchase_link = params.fetch("purchase_link")
 
     if @product.valid?
@@ -67,7 +67,7 @@ class ProductsController < ApplicationController
     @product.name = params.fetch("name")
     @product.category_id = params.fetch("category_id")
     @product.average_price = params.fetch("average_price")
-    @product.product_image = params.fetch("product_image")
+    @product.product_image = params.fetch("product_image") if params.key?("product_image")
     @product.purchase_link = params.fetch("purchase_link")
 
     if @product.valid?

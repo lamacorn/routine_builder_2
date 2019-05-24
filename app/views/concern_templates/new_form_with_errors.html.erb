@@ -17,7 +17,7 @@
 <hr>
 
 <!-- Form concern start -->
-<form action="/create_concern" method="post">
+<form action="/create_concern" method="post" enctype="multipart/form-data">
 <!-- Form concern end -->
 
   <!-- Label and input for name start -->
@@ -51,7 +51,7 @@
     </label>
 
     <!-- Input for example_photo start -->
-    <input type="text" id="example_photo" name="example_photo" class="form-control" value="<%= @concern.example_photo %>">
+    <input type="file" id="example_photo" name="example_photo" class="form-control">
     <!-- Input for example_photo end -->
   </div>
   <!-- Label and input for example_photo end -->

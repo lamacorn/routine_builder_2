@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  mount_uploader :product_image, ProductImageUploader
+
   # Direct associations
 
   belongs_to :category,
