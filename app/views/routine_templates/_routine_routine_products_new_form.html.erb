@@ -1,47 +1,30 @@
-<!-- Form routine_product start -->
 <form action="/create_routine_product_from_routine" method="post">
-<!-- Form routine_product end -->
 
-  <!-- Label and input for routine_id start -->
-  <!-- Input for routine_id start -->
   <input type="hidden" name="routine_id" value="<%= @routine.id %>">
-  <!-- Input for routine_id end -->
 
-  <!-- Label and input for product_id start -->
   <div class="form-group">
     <label for="product_id">
       Product
     </label>
 
-    <!-- Input for product_id start -->
     <%= select_tag(:product_id, options_from_collection_for_select(Product.all, :id, :name, @routine_product.product_id), :class => "form-control") %>
-    <!-- Input for product_id end -->
   </div>
-  <!-- Label and input for product_id end -->
 
-  <!-- Label and input for use_frequency_id start -->
   <div class="form-group">
     <label for="use_frequency_id">
       Use frequency
     </label>
 
-    <!-- Input for use_frequency_id start -->
     <%= select_tag(:use_frequency_id, options_from_collection_for_select(Usefrequency.all, :id, :description, @routine_product.use_frequency_id), :class => "form-control") %>
-    <!-- Input for use_frequency_id end -->
   </div>
-  <!-- Label and input for use_frequency_id end -->
 
-  <!-- Label and input for note start -->
   <div class="form-group">
     <label for="note">
       Note
     </label>
 
-    <!-- Input for note start -->
     <textarea id="note" name="note" class="form-control" rows="3"><%= @routine_product.note %></textarea>
-    <!-- Input for note end -->
   </div>
-  <!-- Label and input for note end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create routine product

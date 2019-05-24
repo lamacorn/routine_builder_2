@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link product_concern start -->
       <div class="col">
         <a href="/product_concerns/<%= @product_concern.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit product concern
         </a>
       </div>
-      <!-- Edit link product_concern end -->
 
-      <!-- Delete link product_concern start -->
       <div class="col">
         <a href="/delete_product_concern/<%= @product_concern.id %>" class="btn btn-block btn-outline-secondary">
           Delete product concern
         </a>
       </div>
-      <!-- Delete link product_concern end -->
     </div>
 
     <dl>
       <dt>
         Concern
       </dt>
-      <!-- Display concern_id start -->
       <dd>
         <% if @product_concern.concern.present? %>
           <a href="/concerns/<%= @product_concern.concern_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display concern_id end -->
 
       <dt>
         Product
       </dt>
-      <!-- Display product_id start -->
       <dd>
         <% if @product_concern.product.present? %>
           <a href="/products/<%= @product_concern.product_id %>">
@@ -53,37 +46,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display product_id end -->
 
       <dt>
         Good for
       </dt>
-      <!-- Display good_for start -->
       <dd>
         <%= @product_concern.good_for %>
       </dd>
-      <!-- Display good_for end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@product_concern.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@product_concern.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

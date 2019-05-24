@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link routine_product start -->
       <div class="col">
         <a href="/routine_products/<%= @routine_product.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit routine product
         </a>
       </div>
-      <!-- Edit link routine_product end -->
 
-      <!-- Delete link routine_product start -->
       <div class="col">
         <a href="/delete_routine_product/<%= @routine_product.id %>" class="btn btn-block btn-outline-secondary">
           Delete routine product
         </a>
       </div>
-      <!-- Delete link routine_product end -->
     </div>
 
     <dl>
       <dt>
         Routine
       </dt>
-      <!-- Display routine_id start -->
       <dd>
         <% if @routine_product.routine.present? %>
           <a href="/routines/<%= @routine_product.routine_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display routine_id end -->
 
       <dt>
         Product
       </dt>
-      <!-- Display product_id start -->
       <dd>
         <% if @routine_product.product.present? %>
           <a href="/products/<%= @routine_product.product_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display product_id end -->
 
       <dt>
         Use frequency
       </dt>
-      <!-- Display use_frequency_id start -->
       <dd>
         <% if @routine_product.use_frequency.present? %>
           <a href="/usefrequencies/<%= @routine_product.use_frequency_id %>">
@@ -66,37 +57,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display use_frequency_id end -->
 
       <dt>
         Note
       </dt>
-      <!-- Display note start -->
       <dd>
         <%= @routine_product.note %>
       </dd>
-      <!-- Display note end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@routine_product.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@routine_product.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

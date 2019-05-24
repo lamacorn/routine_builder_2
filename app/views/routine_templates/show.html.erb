@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link routine start -->
       <div class="col">
         <a href="/routines/<%= @routine.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit routine
         </a>
       </div>
-      <!-- Edit link routine end -->
 
-      <!-- Delete link routine start -->
       <div class="col">
         <a href="/delete_routine/<%= @routine.id %>" class="btn btn-block btn-outline-secondary">
           Delete routine
         </a>
       </div>
-      <!-- Delete link routine end -->
     </div>
 
     <dl>
       <dt>
         Customer
       </dt>
-      <!-- Display customer_id start -->
       <dd>
         <% if @routine.customer.present? %>
           <a href="/customers/<%= @routine.customer_id %>">
@@ -40,42 +35,33 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display customer_id end -->
 
       <dt>
         Active
       </dt>
-      <!-- Display active start -->
       <dd>
         <%= @routine.active %>
       </dd>
-      <!-- Display active end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@routine.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@routine.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "routine_templates/routine_routine_products" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
