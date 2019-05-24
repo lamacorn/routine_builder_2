@@ -1,4 +1,6 @@
 ActiveAdmin.register RoutineProduct do
+
+ permit_params :routine_id, :product_id, :use_frequency_id, :note
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
