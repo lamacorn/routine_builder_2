@@ -49,6 +49,19 @@ class Customer < ApplicationRecord
   # Indirect associations
 
   # Validations
+  #validates(:column_name, { :presence => true, :uniqueness => true })  #makes sure there's a value in this column before you can save.
+  #validates(:column_name, { :uniqueness => true })  #makes sure there's a uique value in this column before you can save.
+
+  validates(:firstname, { :presence => true })
+  validates(:lastname, { :presence => true })
+  validates(:email, { :presence => true, :uniqueness => true })
+  validates(:phone, { :presence => true })
+  validates(:address_city, { :presence => true })
+  validates(:address_street, { :presence => true })
+  validates(:address_state, { :presence => true })
+  validates(:address_zipcode, { :presence => true })
+  
+#  customer.errors.full_messages -->  the errors.fullmessages.each will give your user a list of all of the things are wrong if they are trying to save
 
 def age
     require 'date'
