@@ -14,4 +14,6 @@ ActiveAdmin.register Customer do
 #   permitted
 # end
 
+
+
 end

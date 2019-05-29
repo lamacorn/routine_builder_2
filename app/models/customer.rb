@@ -1,3 +1,20 @@
+#id
+#firstname
+#lastname
+#email
+#phone
+#notes
+#profile_photo
+#birthday
+#address_street
+#address_city
+#address_state
+#address_zip
+#optin_emai
+#optin_texts
+
+
+
 require 'open-uri'
 class Customer < ApplicationRecord
   before_validation :geocode_address_street
@@ -32,5 +49,28 @@ class Customer < ApplicationRecord
   # Indirect associations
 
   # Validations
+
+def age
+    require 'date'
+    ageInDays = Date.today - self.birthday
+    ageInYears = ageInDays/365
+    return ageInYears.to_i
+end
+
+def optInEmail_check
+  if self.optin_email
+    return "Yes"
+  else " "
+  end
+end
+
+def optInText_check
+    if self.optin_texts
+    return "Yes"
+  else " "
+  end
+end
+
+
 
 end

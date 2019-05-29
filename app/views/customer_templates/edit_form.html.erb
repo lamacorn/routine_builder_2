@@ -1,22 +1,19 @@
 <h1>
-  Edit customer #<%= @customer.id %>
+  Edit customer <%= @customer.firstname %> <%= @customer.lastname %>
 </h1>
 
 <hr>
 
 <form action="/update_customer/<%= @customer.id %>" method="post" enctype="multipart/form-data">
 
-  <div class="form-group">
-    <label for="email">
-      Email
-    </label>
-
-    <textarea id="email" name="email" class="form-control" rows="3"><%= @customer.email %></textarea>
-  </div>
-
-  <div class="form-group">
+<div class="row">
+  <div class="col">
+    <h3>Profile Info</h3>
+    
+    
+      <div class="form-group">
     <label for="firstname">
-      Firstname
+      First Name
     </label>
 
     <input type="text" id="firstname" name="firstname" class="form-control" value="<%= @customer.firstname %>">
@@ -24,13 +21,23 @@
 
   <div class="form-group">
     <label for="lastname">
-      Lastname
+      Last Name
     </label>
 
     <input type="text" id="lastname" name="lastname" class="form-control" value="<%= @customer.lastname %>">
   </div>
+  
 
-  <div class="form-group">
+
+ <div class="form-group">
+    <label for="birthday">
+      Birthday
+    </label>
+
+    <input type="text" id="birthday" name="birthday" class="form-control" value="<%= @customer.birthday %>">
+  </div>
+  
+    <div class="form-group">
     <label for="profile_photo">
       Profile photo
     </label>
@@ -38,60 +45,13 @@
     <%= cl_image_tag(@customer.profile_photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="profile_photo" name="profile_photo" class="form-control">
   </div>
-
-  <div class="form-group">
-    <label for="birthday">
-      Birthday
-    </label>
-
-    <input type="text" id="birthday" name="birthday" class="form-control" value="<%= @customer.birthday %>">
-  </div>
-
-  <div class="form-group">
-    <label for="address_street">
-      Address street
-    </label>
-
-    <input type="text" id="address_street" name="address_street" class="form-control" value="<%= @customer.address_street %>">
-  </div>
-
-  <div class="form-group">
-    <label for="address_city">
-      Address city
-    </label>
-
-    <input type="text" id="address_city" name="address_city" class="form-control" value="<%= @customer.address_city %>">
-  </div>
-
-  <div class="form-group">
-    <label for="address_state">
-      Address state
-    </label>
-
-    <input type="text" id="address_state" name="address_state" class="form-control" value="<%= @customer.address_state %>">
-  </div>
-
-  <div class="form-group">
-    <label for="address_zipcode">
-      Address zipcode
-    </label>
-
-    <input type="text" id="address_zipcode" name="address_zipcode" class="form-control" value="<%= @customer.address_zipcode %>">
-  </div>
-
-  <div class="form-group">
-    <label for="notes">
-      Notes
-    </label>
-
-    <textarea id="notes" name="notes" class="form-control" rows="3"><%= @customer.notes %></textarea>
-  </div>
+  
 
   <div class="form-check">
     <input type="hidden" value="0" name="optin_email">
     <input id="optin_email" class="form-check-input" name="optin_email" type="checkbox" value="1" <%= "checked" if @customer.optin_email %>>
     <label for="optin_email" class="form-check-label">
-      Optin email
+      Opt-in for Email?
     </label>
   </div>
 
@@ -99,8 +59,22 @@
     <input type="hidden" value="0" name="optin_texts">
     <input id="optin_texts" class="form-check-input" name="optin_texts" type="checkbox" value="1" <%= "checked" if @customer.optin_texts %>>
     <label for="optin_texts" class="form-check-label">
-      Optin texts
+      Opt-in for Text Message Reminders?
     </label>
+  </div>
+
+
+
+  </div>
+<div class="col">
+  <h3>Contact Info</h3>
+ 
+ <div class="form-group">
+    <label for="email">
+      Email
+    </label>
+
+    <input id="email" name="email" class="form-control"><%= @customer.email %></input>
   </div>
 
   <div class="form-group">
@@ -110,11 +84,61 @@
 
     <input type="text" id="phone" name="phone" class="form-control" value="<%= @customer.phone %>">
   </div>
+ 
+  <div class="form-group">
+    <label for="address_street">
+      Street Address
+    </label>
+
+    <input type="text" id="address_street" name="address_street" class="form-control" value="<%= @customer.address_street %>">
+  </div>
+
+  <div class="form-group">
+    <label for="address_city">
+      City
+    </label>
+
+    <input type="text" id="address_city" name="address_city" class="form-control" value="<%= @customer.address_city %>">
+  </div>
+
+  <div class="form-group">
+    <label for="address_state">
+      State
+    </label>
+
+    <input type="text" id="address_state" name="address_state" class="form-control" value="<%= @customer.address_state %>">
+  </div>
+
+  <div class="form-group">
+    <label for="address_zipcode">
+      Zipcode
+    </label>
+
+    <input type="text" id="address_zipcode" name="address_zipcode" class="form-control" value="<%= @customer.address_zipcode %>">
+  </div>
+  
+  </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <textarea id="notes" name="notes" class="form-control" rows="3"><%= @customer.notes %></textarea>
+  </div>
+
+
+
+
 
   <button class="btn btn-block btn-outline-secondary">
     Update customer
   </button>
 </form>
+
+
 
 <hr>
 

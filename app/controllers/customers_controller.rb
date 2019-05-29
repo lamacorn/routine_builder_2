@@ -45,7 +45,10 @@ class CustomersController < ApplicationController
     if @customer.valid?
       @customer.save
 
-      redirect_back(:fallback_location => "/customers", :notice => "Customer created successfully.")
+      url = "/customers/" + @customer.id.to_s
+      # redirect_back(:fallback_location => "/customers", :notice => "Customer created successfully.")
+      redirect_to url
+      
     else
       render("customer_templates/new_form_with_errors.html.erb")
     end

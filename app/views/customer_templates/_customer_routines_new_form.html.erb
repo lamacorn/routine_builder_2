@@ -3,10 +3,13 @@
   <input type="hidden" name="customer_id" value="<%= @customer.id %>">
 
   <div class="form-group">
-    <label for="active">
-      Active
+   
+    
+     <input id="active"  name="active" type="checkbox" checked>
+     <label for="active">
+      Make this routine active
     </label>
-    <input id="active" class="form-check-input" name="active" type="checkbox" <%= "checked" if @routine.active %>>
+    
   </div>
 
   <button class="btn btn-block btn-outline-secondary">

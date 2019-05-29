@@ -1,9 +1,123 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
-    <h1>
-      Customer #<%= @customer.id %> details
-    </h1>
 
+<h1><%= @customer.firstname %>'s details</h1>
+<img src="<%= @customer.profile_photo %>" class="img-fluid">
+
+      
+      <h2>Personal Information</h2>
+<div class="row">
+  <div class="col">
+      <dl><dt>
+        Name
+      </dt>
+      <dd>
+        <%= @customer.firstname %> <%= @customer.lastname %>
+      </dd>
+
+      <dt>
+        Email Address
+      </dt>
+      <dd>
+        <%= @customer.email %>
+      </dd>
+
+      <dt>
+        Birthday
+      </dt>
+      <dd>
+        <%= @customer.birthday %>
+      </dd>
+        <dd>
+        <%= @customer.age  %> years old
+      </dd>
+
+      <dt>
+        Phone Number
+      </dt>
+      <dd>
+        <%= number_to_phone(@customer.phone) %>
+      </dd>
+      </dl>
+  </div>
+  
+  <div class="col">
+      <dl>
+        <dt>
+        Address
+      </dt>
+      <dd>
+       <%= @customer.address_street %>
+      </dd>
+      <dd>
+        <%= @customer.address_city %>, <%= @customer.address_state %>
+      </dd>
+      <dd>
+        <%= @customer.address_zipcode %>
+      </dd>
+      </dl>
+  </div>
+
+  <div class="col">
+      <dl>
+        <dt>
+        Receive Email
+      </dt>
+      <dd>
+        <%= @customer.optInEmail_check %>
+      </dd>
+
+      <dt>
+        Receive Texts
+      </dt>
+      <dd>
+        <%= @customer.optInText_check %>
+      </dd>
+      
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@customer.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@customer.updated_at) %> ago
+      </dd>
+      </dl>
+      
+  </div>
+</div>
+
+
+<h2>Notes</h2>
+<div><%= @customer.notes %></div>
+
+</div>
+</div>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "customer_templates/customer_customer_concerns" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <%= render partial: "customer_templates/customer_routines" %>
+  </div>
+</div>
+
+
+
+<div class="row mb-3">
+<div class="col-md-8 offset-md-2">
+  
+  <h5>Danger Zone</h5>
     <div class="row mb-3">
       <div class="col">
         <a href="/customers" class="btn btn-block btn-outline-secondary">
@@ -23,126 +137,6 @@
         </a>
       </div>
     </div>
-
-    <dl>
-      <dt>
-        Email
-      </dt>
-      <dd>
-        <%= @customer.email %>
-      </dd>
-
-      <dt>
-        Firstname
-      </dt>
-      <dd>
-        <%= @customer.firstname %>
-      </dd>
-
-      <dt>
-        Lastname
-      </dt>
-      <dd>
-        <%= @customer.lastname %>
-      </dd>
-
-      <dt>
-        Profile photo
-      </dt>
-      <dd>
-        <img src="<%= @customer.profile_photo %>" class="img-fluid">
-      </dd>
-
-      <dt>
-        Birthday
-      </dt>
-      <dd>
-        <%= @customer.birthday %>
-      </dd>
-
-      <dt>
-        Address street
-      </dt>
-      <dd>
-        <div>
-          <%= render partial: "customer_templates/one_photo_map" %>
-        </div>
-      </dd>
-
-      <dt>
-        Address city
-      </dt>
-      <dd>
-        <%= @customer.address_city %>
-      </dd>
-
-      <dt>
-        Address state
-      </dt>
-      <dd>
-        <%= @customer.address_state %>
-      </dd>
-
-      <dt>
-        Address zipcode
-      </dt>
-      <dd>
-        <%= @customer.address_zipcode %>
-      </dd>
-
-      <dt>
-        Notes
-      </dt>
-      <dd>
-        <%= @customer.notes %>
-      </dd>
-
-      <dt>
-        Optin email
-      </dt>
-      <dd>
-        <%= @customer.optin_email %>
-      </dd>
-
-      <dt>
-        Optin texts
-      </dt>
-      <dd>
-        <%= @customer.optin_texts %>
-      </dd>
-
-      <dt>
-        Phone
-      </dt>
-      <dd>
-        <%= @customer.phone %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@customer.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@customer.updated_at) %> ago
-      </dd>
-    </dl>
-  </div>
-</div>
-
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "customer_templates/customer_routines" %>
-  </div>
-</div>
-
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "customer_templates/customer_customer_concerns" %>
-  </div>
+    
+      </div>
 </div>

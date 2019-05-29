@@ -8,4 +8,8 @@ class Category < ApplicationRecord
 
   # Validations
 
+def product_count
+  return Product.where({:category_id => self.id}).count
+end
+
 end

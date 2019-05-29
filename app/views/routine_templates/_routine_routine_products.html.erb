@@ -1,24 +1,26 @@
 <div class="card">
   <div class="card-header d-flex align-items-center justify-content-between">
-    Routine Products
+    Routine Products & Steps
 
     <a data-toggle="collapse" href="#routine_routine_products_new_form">
-      Add routine product
+      Add a product step
     </a>
   </div>
 
-  <ul class="list-group list-group-flush">
+  <!--<ul class="list-group list-group-flush">-->
     <% @routine.routine_products.each do |routine_product| %>
-      <li class="list-group-item d-flex align-items-center justify-content-between">
-        <a href="/routine_products/<%= routine_product.id %>">
-          <%= routine_product.routine_id %>
-        </a>
+      <!--<li class="list-group-item d-flex align-items-center justify-content-between">-->
+        
+          <a href="/routine_products/<%= routine_product.id %>">
+          <%= routine_product.productname %> </a>
+        
+        <ul>
+          <li>Use: <%= routine_product.frequency %></li>
+        <li><%= routine_product.note %></li>
 
-        <a href="/delete_routine_product_from_routine/<%= routine_product.id %>">
-          Delete
-        </a>
+        <li><a href="/delete_routine_product_from_routine/<%= routine_product.id %>"><font size="1"> (Delete) </font></a></li> </ul>
 
-      </li>
+      <!--</li>-->
     <% end %>
 
     <div class="card-footer">

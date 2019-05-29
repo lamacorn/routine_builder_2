@@ -14,4 +14,14 @@ ActiveAdmin.register CustomerConcern do
 #   permitted
 # end
 
+def concern_name
+    return Concern.where({ self.concern_id => Concern.id }).first.pluck(:name)
+end
+
+
+def customer_name
+    return Customer.where({ :customer_id => self.id }).first.pluck(:name)
+end
+
+
 end

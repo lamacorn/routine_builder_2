@@ -10,11 +10,11 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-12 mb-3">
-    <%= render partial: "concern_templates/concerns_search_form" %>
-  </div>
-</div>
+<!--<div class="row">-->
+<!--  <div class="col-md-12 mb-3">-->
+<!--    <% render partial: "concern_templates/concerns_search_form" %>-->
+<!--  </div>-->
+<!--</div>-->
 
 
 
@@ -24,9 +24,6 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
-        <th>
-          ID
-        </th>
 
         <th>
           Name
@@ -41,22 +38,11 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
         </th>
       </tr>
 
       <% @concerns.each do |concern| %>
       <tr>
-        <td>
-          <%= concern.id %>
-        </td>
 
         <td>
           <%= concern.name %>
@@ -70,13 +56,6 @@
           <img src='<%= concern.example_photo %>' class='img-fluid'>
         </td>
 
-        <td>
-          <%= time_ago_in_words(concern.created_at) %> ago
-        </td>
-
-        <td>
-          <%= time_ago_in_words(concern.updated_at) %> ago
-        </td>
 
         <td>
           <a href="/concerns/<%= concern.id %>">
