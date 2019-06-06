@@ -24,10 +24,6 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
-                <th>
-          Product image
-        </th>
-        
         <th>
           ID
         </th>
@@ -44,10 +40,20 @@
           Average price
         </th>
 
-
+        <th>
+          Product image
+        </th>
 
         <th>
           Purchase link
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
         </th>
 
         <th>
@@ -57,14 +63,8 @@
       <% @products.each do |product| %>
       <tr>
         <td>
-          <img src='<%= product.product_image %>' class='img-fluid'>
-        </td>
-        
-        <td>
           <%= product.id %>
         </td>
-        
-
 
         <td>
           <%= product.name %>
@@ -79,15 +79,24 @@
         </td>
 
         <td>
-          <%= number_to_currency(product.average_price) %>
+          <%= product.average_price %>
         </td>
-
-
 
         <td>
-          <a href="<%= product.purchase_link %>">Link</a>
+          <img src='<%= product.product_image %>' class='img-fluid'>
         </td>
 
+        <td>
+          <%= product.purchase_link %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(product.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(product.updated_at) %> ago
+        </td>
 
         <td>
           <a href="/products/<%= product.id %>">

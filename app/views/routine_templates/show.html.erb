@@ -1,29 +1,21 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h1>
-      <%= @routine.customer.firstname %> <%= @routine.customer.lastname %>'s routine [#<%= @routine.id %>]
+      Routine #<%= @routine.id %> details
     </h1>
 
     <div class="row mb-3">
       <div class="col">
-        <a href="/customers/<%= @routine.customer_id %>" class="btn btn-block btn-outline-secondary">
-          Back to customer
-        </a>
-      </div>
-      
-         <div class="col">
-        <a href="mailto:<%= @routine.customer.email %>" class="btn btn-block btn-outline-primary">
-          Email Routine
+        <a href="/routines" class="btn btn-block btn-outline-secondary">
+          Go back
         </a>
       </div>
 
       <div class="col">
         <a href="/routines/<%= @routine.id %>/edit" class="btn btn-block btn-outline-secondary">
-          (De)activate routine
+          Edit routine
         </a>
       </div>
-      
-   
 
       <div class="col">
         <a href="/delete_routine/<%= @routine.id %>" class="btn btn-block btn-outline-secondary">
@@ -38,16 +30,28 @@
       </dt>
       <dd>
         <% if @routine.customer.present? %>
-           <%= @routine.customer.firstname %> <%= @routine.customer.lastname %> - 
+          <a href="/customers/<%= @routine.customer_id %>">
             <%= @routine.customer.email %>
+          </a>
         <% end %>
       </dd>
 
       <dt>
-        Routine Active? - <a href="/routines/<%= @routine.id %>/edit">Edit</a>
+        Active
       </dt>
       <dd>
         <%= @routine.active %>
+      </dd>
+
+      <dt>
+        Createdby
+      </dt>
+      <dd>
+        <% if @routine.createdby.present? %>
+          <a href="/coaches/<%= @routine.createdby_id %>">
+            <%= @routine.createdby.created_at %>
+          </a>
+        <% end %>
       </dd>
 
       <dt>

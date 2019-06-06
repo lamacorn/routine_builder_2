@@ -14,6 +14,4 @@ ActiveAdmin.register RoutineProduct do
 #   permitted
 # end
 
-
-
 end
