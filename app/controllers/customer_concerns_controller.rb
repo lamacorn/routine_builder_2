@@ -8,7 +8,7 @@ class CustomerConcernsController < ApplicationController
 
   def show
     @customer_concern = CustomerConcern.find(params.fetch("id_to_display"))
-   
+
     render("customer_concern_templates/show.html.erb")
   end
 
@@ -42,7 +42,7 @@ class CustomerConcernsController < ApplicationController
     if @customer_concern.valid?
       @customer_concern.save
 
-      redirect_to("/customers/#{@customer_concern.customer_id}", notice: "Customer Concern created successfully.")
+      redirect_to("/customers/#{@customer_concern.customer_id}", notice: "CustomerConcern created successfully.")
     else
       render("customer_concern_templates/new_form_with_errors.html.erb")
     end

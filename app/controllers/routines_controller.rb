@@ -1,7 +1,7 @@
 class RoutinesController < ApplicationController
   def index
     @q = Routine.ransack(params[:q])
-    @routines = @q.result(:distinct => true).includes(:customer, :routine_products).page(params[:page]).per(10)
+    @routines = @q.result(:distinct => true).includes(:customer, :routine_products, :createdby).page(params[:page]).per(10)
 
     render("routine_templates/index.html.erb")
   end
@@ -24,6 +24,7 @@ class RoutinesController < ApplicationController
 
     @routine.customer_id = params.fetch("customer_id")
     @routine.active = params.fetch("active")
+    @routine.createdby_id = params.fetch("createdby_id")
 
     if @routine.valid?
       @routine.save
@@ -39,6 +40,7 @@ class RoutinesController < ApplicationController
 
     @routine.customer_id = params.fetch("customer_id")
     @routine.active = params.fetch("active")
+    @routine.createdby_id = params.fetch("createdby_id")
 
     if @routine.valid?
       @routine.save
@@ -60,6 +62,7 @@ class RoutinesController < ApplicationController
 
     @routine.customer_id = params.fetch("customer_id")
     @routine.active = params.fetch("active")
+    
 
     if @routine.valid?
       @routine.save
@@ -76,6 +79,14 @@ class RoutinesController < ApplicationController
     @routine.destroy
 
     redirect_to("/customers/#{@routine.customer_id}", notice: "Routine deleted successfully.")
+  end
+
+  def destroy_row_from_createdby
+    @routine = Routine.find(params.fetch("id_to_remove"))
+
+    @routine.destroy
+
+    redirect_to("/coaches/#{@routine.createdby_id}", notice: "Routine deleted successfully.")
   end
 
   def destroy_row

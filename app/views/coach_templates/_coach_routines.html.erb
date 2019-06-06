@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Routines
+
+    <a data-toggle="collapse" href="#coach_routines_new_form">
+      Add routine
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @coach.routines.each do |routine| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <a href="/routines/<%= routine.id %>">
+          <%= routine.customer_id %>
+        </a>
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
