@@ -37,6 +37,10 @@
         </th>
 
         <th>
+          Createdby
+        </th>
+
+        <th>
           Created at
         </th>
 
@@ -64,6 +68,14 @@
 
         <td>
           <%= routine.active %>
+        </td>
+
+        <td>
+          <% if routine.createdby.present? %>
+            <a href="/coaches/<%= routine.createdby.id %>">
+              <%= routine.createdby.created_at %>
+            </a>
+          <% end %>
         </td>
 
         <td>

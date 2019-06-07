@@ -1,10 +1,10 @@
 class CreateCustomers < ActiveRecord::Migration[5.1]
   def change
     create_table :customers do |t|
-      t.text :email
+      t.string :email
       t.string :firstname
       t.string :lastname
-      t.string :profile_photo
+      t.string :photo
       t.date :birthday
       t.string :address_street
       t.string :address_city

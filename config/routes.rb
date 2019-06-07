@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root :to => "customers#index"
+  devise_for :coaches
+  # Routes for the Coach resource:
+
+  # READ
+  get("/coaches", { :controller => "coaches", :action => "index" })
+  get("/coaches/:id_to_display", { :controller => "coaches", :action => "show" })
+
+  #------------------------------
+
   # Routes for the Product concern resource:
 
   # CREATE
@@ -127,6 +137,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_routine/:id_to_remove", { :controller => "routines", :action => "destroy_row" })
+  get("/delete_routine_from_createdby/:id_to_remove", { :controller => "routines", :action => "destroy_row_from_createdby" })
   get("/delete_routine_from_customer/:id_to_remove", { :controller => "routines", :action => "destroy_row_from_customer" })
 
   #------------------------------
