@@ -1,23 +1,23 @@
 <h1>
-  Hey newbie!
+  Add a new customer
 </h1>
 
-<img src="">
-
-<div>
-  Thanks for taking the time to work with GRWMD! Please take a minute to fill out the following form to make your consultation easier. 
-</div>
 
 <hr>
 
 <form action="/create_customer" method="post" enctype="multipart/form-data">
 
-<div class="row">
-  <div class="col">
-    <h4>Profile Info</h4>
-      <div class="form-group">
+  <div class="form-group">
+    <label for="email">
+      Email
+    </label>
+
+    <input type="text" id="email" name="email" class="form-control">
+  </div>
+
+  <div class="form-group">
     <label for="firstname">
-      First Name *
+      Firstname
     </label>
 
     <input type="text" id="firstname" name="firstname" class="form-control">
@@ -25,13 +25,21 @@
 
   <div class="form-group">
     <label for="lastname">
-      Last Name *
+      Lastname
     </label>
 
     <input type="text" id="lastname" name="lastname" class="form-control">
   </div>
-  
-    <div class="form-group">
+
+  <div class="form-group">
+    <label for="photo">
+      Photo
+    </label>
+
+    <input type="file" id="photo" name="photo" class="form-control">
+  </div>
+
+  <div class="form-group">
     <label for="birthday">
       Birthday
     </label>
@@ -40,55 +48,8 @@
   </div>
 
   <div class="form-group">
-    <label for="profile_photo">
-      Profile Photo
-    </label>
-
-    <input type="file" id="profile_photo" name="profile_photo" class="form-control">
-  </div>
-  
-   <div class="form-check">
-    <input type="hidden" value="0" name="optin_email">
-    <input id="optin_email" class="form-check-input" name="optin_email" type="checkbox">
-    <label for="optin_email" class="form-check-label">
-      Opt-in for Email?
-    </label>
-  </div>
-
-  <div class="form-check">
-    <input type="hidden" value="0" name="optin_texts">
-    <input id="optin_texts" class="form-check-input" name="optin_texts" type="checkbox">
-    <label for="optin_texts" class="form-check-label">
-      Opt-in for Text Message Reminders?
-    </label>
-  </div>
-
-
-  
-
-</div>
-<div class="col">
-  <h3>Contact Info</h3>
-  <div class="form-group">
-    <label for="email">
-      Email *
-    </label>
-
-    <input type="text" id="email" name="email" class="form-control"></input>
-  </div>
-  
-    <div class="form-group">
-    <label for="phone">
-      Phone
-    </label>
-
-    <input type="text" id="phone" name="phone" class="form-control">
-  </div>
-  
-  
-    <div class="form-group">
     <label for="address_street">
-     Street Address
+      Address street
     </label>
 
     <input type="text" id="address_street" name="address_street" class="form-control">
@@ -96,7 +57,7 @@
 
   <div class="form-group">
     <label for="address_city">
-      City
+      Address city
     </label>
 
     <input type="text" id="address_city" name="address_city" class="form-control">
@@ -104,7 +65,7 @@
 
   <div class="form-group">
     <label for="address_state">
-      State
+      Address state
     </label>
 
     <input type="text" id="address_state" name="address_state" class="form-control">
@@ -112,32 +73,46 @@
 
   <div class="form-group">
     <label for="address_zipcode">
-      Zipcode
+      Address zipcode
     </label>
 
     <input type="text" id="address_zipcode" name="address_zipcode" class="form-control">
   </div>
-  
-  
-  
-</div>
-</div>
-
 
   <div class="form-group">
     <label for="notes">
-      Anything else we should know?
+      Notes
     </label>
 
     <textarea id="notes" name="notes" class="form-control" rows="3"></textarea>
   </div>
 
+  <div class="form-check">
+    <input type="hidden" value="0" name="optin_email">
+    <input id="optin_email" class="form-check-input" name="optin_email" type="checkbox">
+    <label for="optin_email" class="form-check-label">
+      Optin email
+    </label>
+  </div>
 
+  <div class="form-check">
+    <input type="hidden" value="0" name="optin_texts">
+    <input id="optin_texts" class="form-check-input" name="optin_texts" type="checkbox">
+    <label for="optin_texts" class="form-check-label">
+      Optin texts
+    </label>
+  </div>
 
+  <div class="form-group">
+    <label for="phone">
+      Phone
+    </label>
 
+    <input type="text" id="phone" name="phone" class="form-control">
+  </div>
 
   <button class="btn btn-block btn-outline-secondary">
-    Create profile
+    Create customer
   </button>
 </form>
 
@@ -146,4 +121,3 @@
 <a href="/customers">
   Go back
 </a>
-

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
   <div class="container">
     <a class="navbar-brand" href="/">
-      GRWMD Routine Builder
+      RoutineBuilder2
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsible-nav-links" aria-controls="collapsible-nav-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,14 +12,29 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Navigate
+            Resources
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a href="/customers" class="dropdown-item">
-              Customers
+            <a href="/coaches" class="dropdown-item">
+              Coaches
+            </a>
+            <a href="/product_concerns" class="dropdown-item">
+              Product Concerns
+            </a>
+            <a href="/customer_concerns" class="dropdown-item">
+              Customer Concerns
             </a>
             <a href="/concerns" class="dropdown-item">
               Concerns
+            </a>
+            <a href="/usefrequencies" class="dropdown-item">
+              Usefrequencies
+            </a>
+            <a href="/routine_products" class="dropdown-item">
+              Routine Products
+            </a>
+            <a href="/routines" class="dropdown-item">
+              Routines
             </a>
             <a href="/categories" class="dropdown-item">
               Categories
@@ -27,24 +42,37 @@
             <a href="/products" class="dropdown-item">
               Products
             </a>
-            <!--<a href="/product_concerns" class="dropdown-item">-->
-            <!--  Product Concerns-->
-            <!--</a>-->
-            <!--<a href="/customer_concerns" class="dropdown-item">-->
-            <!--  Customer Concerns-->
-            <!--</a>-->
-            <!--<a href="/usefrequencies" class="dropdown-item">-->
-            <!--  Use frequencies-->
-            <!--</a>-->
-            <!--<a href="/routine_products" class="dropdown-item">-->
-            <!--  Routine Products-->
-            <!--</a>-->
-            <!--<a href="/routines" class="dropdown-item">-->
-            <!--  Routines-->
-            <!--</a>-->
+            <a href="/customers" class="dropdown-item">
+              Customers
+            </a>
           </div>
         </li>
       </ul>
-      
-      <button class="top_button"><a href="/customers/new">Create Customer</a></button>
+      <ul class="navbar-nav">
+        <% if current_coach.blank? %>
+          <li class="nav-item">
+            <a href="/coaches/sign_in" class="nav-link">
+              Sign in
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/coaches/sign_up" class="nav-link">
+              Sign up
+            </a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a href="/coaches/edit" class="nav-link">
+              Edit profile
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/coaches/sign_out" data-method="delete" class="nav-link">
+              Sign out
+            </a>
+          </li>
+        <% end %>
+      </ul>
 </nav>

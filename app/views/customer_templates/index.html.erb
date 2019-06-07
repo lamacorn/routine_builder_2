@@ -1,34 +1,21 @@
-<!--<div class="row mb-3">-->
-<!--  <div class="col-md-12">-->
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All customers
+    </h1>
 
-
+    <a href="/customers/new" class="btn btn-block btn-outline-secondary">
+      Add a new customer
+    </a>
+  </div>
+</div>
 
 <div class="row">
-  <!--<div class="col">-->
-  <!--    <a href="/customers/new" class="btn btn-block btn-outline-secondary">-->
-  <!--    Add a new customer-->
-  <!--  </a>-->
-  <!--</div>-->
-  <div class="col">
-      <h1>
-      All customers
-      </h1>
-  </div>
-  
-  <div class="col">
+  <div class="col-md-12 mb-3">
     <%= render partial: "customer_templates/customers_search_form" %>
   </div>
 </div>
-    
 
-<!--  </div>-->
-<!--</div>-->
-
-<!--<div class="row">-->
-<!--  <div class="col-md-12 mb-3">-->
-<!--    <% render partial: "customer_templates/customers_search_form" %>-->
-<!--  </div>-->
-<!--</div>-->
 
 
 <hr>
@@ -38,31 +25,67 @@
     <table class="table">
       <tr>
         <th>
-          Customer ID
+          ID
         </th>
 
-        <th>
-          Name
-        </th>
-        
         <th>
           Email
         </th>
 
         <th>
+          Firstname
+        </th>
+
+        <th>
+          Lastname
+        </th>
+
+        <th>
+          Photo
+        </th>
+
+        <th>
+          Birthday
+        </th>
+
+        <th>
+          Address street
+        </th>
+
+        <th>
+          Address city
+        </th>
+
+        <th>
+          Address state
+        </th>
+
+        <th>
+          Address zipcode
+        </th>
+
+        <th>
+          Notes
+        </th>
+
+        <th>
+          Optin email
+        </th>
+
+        <th>
+          Optin texts
+        </th>
+
+        <th>
           Phone
         </th>
-        
+
         <th>
-          Email Opt-In
+          Created at
         </th>
 
         <th>
-          Text Opt-In
-        </th>
-
-        <th>
-          Last Updated
+          Updated at
         </th>
 
         <th>
@@ -71,31 +94,65 @@
 
       <% @customers.each do |customer| %>
       <tr>
-        
         <td>
           <%= customer.id %>
         </td>
 
         <td>
-          <%= customer.firstname %> <%= customer.lastname %>
-        </td>
-
-       <td>
           <%= customer.email %>
         </td>
 
         <td>
-          <%= number_to_phone(customer.phone) %>
+          <%= customer.firstname %>
         </td>
 
         <td>
-          <%= customer.optInEmail_check %>
+          <%= customer.lastname %>
         </td>
 
         <td>
-          <%= customer.optInText_check %>
+          <img src='<%= customer.photo %>' class='img-fluid'>
         </td>
 
+        <td>
+          <%= customer.birthday %>
+        </td>
+
+        <td>
+          <%= customer.address_street %>
+        </td>
+
+        <td>
+          <%= customer.address_city %>
+        </td>
+
+        <td>
+          <%= customer.address_state %>
+        </td>
+
+        <td>
+          <%= customer.address_zipcode %>
+        </td>
+
+        <td>
+          <%= customer.notes %>
+        </td>
+
+        <td>
+          <%= customer.optin_email %>
+        </td>
+
+        <td>
+          <%= customer.optin_texts %>
+        </td>
+
+        <td>
+          <%= customer.phone %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(customer.created_at) %> ago
+        </td>
 
         <td>
           <%= time_ago_in_words(customer.updated_at) %> ago

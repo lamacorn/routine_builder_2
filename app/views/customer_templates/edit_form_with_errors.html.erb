@@ -19,7 +19,7 @@
       Email
     </label>
 
-    <textarea id="email" name="email" class="form-control" rows="3"><%= @customer.email %></textarea>
+    <input type="text" id="email" name="email" class="form-control" value="<%= @customer.email %>">
   </div>
 
   <div class="form-group">
@@ -39,12 +39,12 @@
   </div>
 
   <div class="form-group">
-    <label for="profile_photo">
-      Profile photo
+    <label for="photo">
+      Photo
     </label>
 
-    <%= cl_image_tag(@customer.profile_photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
-    <input type="file" id="profile_photo" name="profile_photo" class="form-control">
+    <%= cl_image_tag(@customer.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="photo" name="photo" class="form-control">
   </div>
 
   <div class="form-group">

@@ -10,11 +10,11 @@
   </div>
 </div>
 
-<!--<div class="row">-->
-<!--  <div class="col-md-12 mb-3">-->
-<!--    <% render partial: "category_templates/categories_search_form" %>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "category_templates/categories_search_form" %>
+  </div>
+</div>
 
 
 
@@ -24,13 +24,20 @@
   <div class="col-md-12">
     <table class="table">
       <tr>
+        <th>
+          ID
+        </th>
 
         <th>
           Name
         </th>
-        
+
         <th>
-          Number of Products
+          Created at
+        </th>
+
+        <th>
+          Updated at
         </th>
 
         <th>
@@ -40,11 +47,19 @@
       <% @categories.each do |category| %>
       <tr>
         <td>
-          <%= category.name.pluralize %>
+          <%= category.id %>
         </td>
-        
+
         <td>
-          <%= category.product_count %>
+          <%= category.name %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(category.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(category.updated_at) %> ago
         </td>
 
         <td>

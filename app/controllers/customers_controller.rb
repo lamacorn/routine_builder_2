@@ -2,11 +2,6 @@ class CustomersController < ApplicationController
   def index
     @q = Customer.ransack(params[:q])
     @customers = @q.result(:distinct => true).includes(:routines, :customer_concerns).page(params[:page]).per(10)
-    @location_hash = Gmaps4rails.build_markers(@customers.where.not(:address_street_latitude => nil)) do |customer, marker|
-      marker.lat customer.address_street_latitude
-      marker.lng customer.address_street_longitude
-      marker.infowindow "<h5><a href='/customers/#{customer.id}'>#{customer.email}</a></h5><small>#{customer.address_street_formatted_address}</small>"
-    end
 
     render("customer_templates/index.html.erb")
   end
@@ -31,7 +26,7 @@ class CustomersController < ApplicationController
     @customer.email = params.fetch("email")
     @customer.firstname = params.fetch("firstname")
     @customer.lastname = params.fetch("lastname")
-    @customer.profile_photo = params.fetch("profile_photo") if params.key?("profile_photo")
+    @customer.photo = params.fetch("photo") if params.key?("photo")
     @customer.birthday = params.fetch("birthday")
     @customer.address_street = params.fetch("address_street")
     @customer.address_city = params.fetch("address_city")
@@ -45,10 +40,7 @@ class CustomersController < ApplicationController
     if @customer.valid?
       @customer.save
 
-      url = "/customers/" + @customer.id.to_s
-      # redirect_back(:fallback_location => "/customers", :notice => "Customer created successfully.")
-      redirect_to url
-      
+      redirect_back(:fallback_location => "/customers", :notice => "Customer created successfully.")
     else
       render("customer_templates/new_form_with_errors.html.erb")
     end
@@ -66,7 +58,7 @@ class CustomersController < ApplicationController
     @customer.email = params.fetch("email")
     @customer.firstname = params.fetch("firstname")
     @customer.lastname = params.fetch("lastname")
-    @customer.profile_photo = params.fetch("profile_photo") if params.key?("profile_photo")
+    @customer.photo = params.fetch("photo") if params.key?("photo")
     @customer.birthday = params.fetch("birthday")
     @customer.address_street = params.fetch("address_street")
     @customer.address_city = params.fetch("address_city")
