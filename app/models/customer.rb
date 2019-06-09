@@ -84,6 +84,8 @@ def optInText_check
   end
 end
 
-
+def recent_customers
+  return Customer.all.order({ :updated_at => :desc }).last(3)
+end
 
 end

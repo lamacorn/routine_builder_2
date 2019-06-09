@@ -19,4 +19,25 @@ class Concern < ApplicationRecord
 
   # Validations
 
+def customer_count
+  a = CustomerConcern.where(:concern_id => self.id)
+
+  return a.count
+end
+
+# def top_concerns
+#   nums = CustomerConcern.where({ :concern_id => 1 }).count
+
+# <%=   a = CustomerConcern.where({ :concern_id => 1 }).count %>
+# <%=   b = CustomerConcern.where({ :concern_id => 2 }).count %>
+# <%=   c = CustomerConcern.where({ :concern_id => 3 }).count %>
+# <%=   d = CustomerConcern.where({ :concern_id => 4 }).count %>
+# <%=   e = CustomerConcern.where({ :concern_id => 5 }).count %>
+# <%=   f = CustomerConcern.where({ :concern_id => 6 }).count %>
+
+# Concern.sort_by(:customer_concerns.count)
+
+# end
+
+
 end

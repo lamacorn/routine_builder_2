@@ -1,0 +1,20 @@
+/*.jumbotron {*/
+/*  background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg");*/
+/*  background-color: #f8f9fa;*/
+/*  background-size: cover;*/
+/*}*/
+
+.footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    margin-top: 100px;
+    
+     position: relative;
+      bottom: 0;
+      width: 100%;
+}
+

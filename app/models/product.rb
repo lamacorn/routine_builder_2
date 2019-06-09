@@ -16,4 +16,10 @@ class Product < ApplicationRecord
 
   # Validations
 
+def routine_count
+  return RoutineProduct.where(:product_id => self.id).count
+
+end
+
+
 end

@@ -1,0 +1,43 @@
+<script>
+window.onload = function () {
+	
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	
+	title:{
+		text:"Products by Category"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Number of Products"
+	},
+	data: [{
+		type: "bar",
+		name: "products",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{ y: <%= Product.where(:category_id => 1).count %>, label: " <%= Category.where(:id => 1).pluck("name").first %> " },
+			{ y: <%= Product.where(:category_id => 2).count %>, label: " <%= Category.where(:id => 2).pluck("name").first %> " },
+			{ y: <%= Product.where(:category_id => 3).count %>, label: " <%= Category.where(:id => 3).pluck("name").first %> " },
+			{ y: <%= Concern.where(:id => 1).count %>, label: " <%= Concern.where(:id => 1).pluck("name").first %> " },
+			{ y: <%= CustomerConcern.where(:concern_id => 1).count %>, label: "CC: <%= Concern.where(:id => 1).pluck("name").first %> " },
+			{ y: <%= CustomerConcern.where(:concern_id => 2).count %>, label: "CC: <%= Concern.where(:id => 2).pluck("name").first %> " },
+            { y: <%= CustomerConcern.where(:concern_id => 3).count %>, label: "CC: <%= Concern.where(:id => 3).pluck("name").first %> " },
+			{ y: 3, label: "Other" },
+			
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+
+
+<div id="chartContainer" style="height: 300px; width: 50%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

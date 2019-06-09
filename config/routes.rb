@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+
   ActiveAdmin.routes(self)
-  root :to => "customers#index"
+  # root :to => "customers#index"
+
+  
+  get("/", { :controller => "universal", :action => "dashboard" })
+  get("/dashboard", { :controller => "universal", :action => "dashboard" })
+
   # Routes for the Product concern resource:
 
   # CREATE
