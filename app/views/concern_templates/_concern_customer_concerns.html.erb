@@ -2,9 +2,7 @@
   <div class="card-header d-flex align-items-center justify-content-between">
     Customers with this Concern
 
-    <a data-toggle="collapse" href="#concern_customer_concerns_new_form">
-      Add customer concern
-    </a>
+
   </div>
 
   <ul class="list-group list-group-flush">
@@ -15,9 +13,7 @@
           <%= customer_concern.customer.firstname %> <%= customer_concern.customer.lastname %>
         </a>
 
-        <a href="/delete_customer_concern_from_concern/<%= customer_concern.id %>">
-          Delete
-        </a>
+ 
 
       </li>
     <% end %>

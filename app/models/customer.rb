@@ -55,7 +55,7 @@ class Customer < ApplicationRecord
   validates(:firstname, { :presence => true })
   validates(:lastname, { :presence => true })
   validates(:email, { :presence => true, :uniqueness => true })
-  validates(:phone, { :presence => true })
+  # validates(:phone, { :presence => true })
   validates(:address_city, { :presence => true })
   validates(:address_street, { :presence => true })
   validates(:address_state, { :presence => true })
@@ -86,6 +86,18 @@ end
 
 def recent_customers
   return Customer.all.order({ :updated_at => :desc }).last(3)
+end
+
+def fullname
+  return self.firstname + " " + self.lastname
+end
+
+def routines_count
+  return Routine.where({ :customer_id => self.id }).count
+end
+
+def active_routines_count
+  return  Routine.where({ :customer_id => self.id, :active => true }).count
 end
 
 end

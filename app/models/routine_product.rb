@@ -25,5 +25,19 @@ def frequency
   return Usefrequency.where({ :id => self.use_frequency_id }).pluck("description").first
 end
 
+def customerid
+  a = Routine.where({ :id => self.routine_id }).first
+  b = Customer.where({ :id => a.customer_id }).pluck("id").first
+  return b
+end
+
+def customername
+  a = Routine.where({ :id => self.routine_id }).first
+  b = Customer.where({ :id => a.customer_id }).pluck("firstname").first
+  c = Customer.where({ :id => a.customer_id }).pluck("lastname").first
+  return b + " " + c
+end
+
+
 
 end

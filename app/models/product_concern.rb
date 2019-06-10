@@ -8,5 +8,14 @@ class ProductConcern < ApplicationRecord
   # Indirect associations
 
   # Validations
+  
+  
+  def product_name
+    return Product.where({ :id => self.product_id }).pluck("name").first
+  end
+  
+  def concern_name
+    return Concern.where({ :id => self.concern_id }).pluck("name").first
+  end
 
 end

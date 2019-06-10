@@ -511,7 +511,10 @@ pre {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
-  margin-left: -15px; }
+  margin-left: -15px;
+  margin-top: 15px; 
+   margin-bottom: 15px; 
+}
 
 .no-gutters {
   margin-right: 0;
@@ -3618,7 +3621,9 @@ input[type="button"].btn-block {
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
   border: 1px solid transparent;
-  border-radius: 0rem; }
+  border-radius: 0rem; 
+  
+}
 
 .alert-heading {
   color: inherit; }
@@ -3681,9 +3686,10 @@ input[type="button"].btn-block {
     color: #08090c; }
 
 .alert-danger {
+  position: relative;  padding: 2rem 2rem; margin-bottom: 2rem; 
   color: #715550;
   background-color: #f8edeb;
-  border-color: #f5e6e3; }
+  border-color: #f5e6e3;  }
   .alert-danger hr {
     border-top-color: #eed5d0; }
   .alert-danger .alert-link {

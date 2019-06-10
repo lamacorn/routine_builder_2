@@ -7,20 +7,20 @@
     </a>
   </div>
 
-  <!--<ul class="list-group list-group-flush">-->
+  <ul class="list-group list-group-flush">
     <% @routine.routine_products.each do |routine_product| %>
       <!--<li class="list-group-item d-flex align-items-center justify-content-between">-->
-        
-          <a href="/routine_products/<%= routine_product.id %>">
+        <li class="list-group-item ">
+          <a href="/products/<%= routine_product.product_id %>">
           <%= routine_product.productname %> </a>
         
         <ul>
-          <li>Use: <%= routine_product.frequency %></li>
-        <li><%= routine_product.note %></li>
+        <li>Use: <%= routine_product.frequency %></li>
+        <li>Note: <%= routine_product.note %></li>
 
-        <li><a href="/delete_routine_product_from_routine/<%= routine_product.id %>"><font size="1"> (Delete) </font></a></li> </ul>
+        </ul>
 
-      <!--</li>-->
+      </li>
     <% end %>
 
     <div class="card-footer">

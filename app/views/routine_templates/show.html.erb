@@ -1,8 +1,8 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
-    <h1>
+    <h2>
       <%= @routine.customer.firstname %> <%= @routine.customer.lastname %>'s routine [#<%= @routine.id %>]
-    </h1>
+    </h2>
 
     <div class="row mb-3">
       <div class="col">
@@ -19,7 +19,7 @@
 
       <div class="col">
         <a href="/routines/<%= @routine.id %>/edit" class="btn btn-block btn-outline-secondary">
-          (De)activate routine
+          (De)activate
         </a>
       </div>
       
@@ -32,38 +32,48 @@
       </div>
     </div>
 
-    <dl>
-      <dt>
-        Customer
-      </dt>
-      <dd>
-        <% if @routine.customer.present? %>
-           <%= @routine.customer.firstname %> <%= @routine.customer.lastname %> - 
-            <%= @routine.customer.email %>
-        <% end %>
-      </dd>
+        <div class="row">
+        <div class="col-sm-6">
+          <dl>
+            <dt>
+              Customer
+            </dt>
+            <dd>
+              <% if @routine.customer.present? %>
+               <%= @routine.customer.firstname %> <%= @routine.customer.lastname %> - 
+               <%= @routine.customer.email %>
+              <% end %>
+            </dd>
 
-      <dt>
-        Routine Active? - <a href="/routines/<%= @routine.id %>/edit">Edit</a>
-      </dt>
-      <dd>
-        <%= @routine.active %>
-      </dd>
+            <dt>
+              Routine Active? - <a href="/routines/<%= @routine.id %>/edit">Edit</a>
+            </dt>
+            <dd>
+              <%= @routine.active %>
+            </dd>
+          </dl>
+        </div>
+        
+        <div class="col-sm-6">
+          <dl>
+            <dt> Created at </dt>
+            <dd>
+            <%= time_ago_in_words(@routine.created_at) %> ago
+            </dd>
 
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@routine.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@routine.updated_at) %> ago
-      </dd>
-    </dl>
+            <dt>
+              Updated at
+            </dt>
+            <dd>
+              <%= time_ago_in_words(@routine.updated_at) %> ago
+            </dd>
+          </dl>
+        </div>
+    </div>
+    
+    
+    
+    
   </div>
 </div>
 
@@ -72,3 +82,5 @@
     <%= render partial: "routine_templates/routine_routine_products" %>
   </div>
 </div>
+
+

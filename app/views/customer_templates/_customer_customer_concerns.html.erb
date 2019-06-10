@@ -1,22 +1,22 @@
 <div class="card">
   <div class="card-header d-flex align-items-center justify-content-between">
-    <h3>Customer Concerns</h3>
+    <h3>Customer's Concerns</h3>
 
     <a data-toggle="collapse" href="#customer_customer_concerns_new_form">
-      Add customer concern
+      Add a concern
     </a>
   </div>
 
   <ul class="list-group list-group-flush">
     <% @customer.customer_concerns.each do |customer_concern| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <a href="/customer_concerns/<%= customer_concern.id %>">
+        <a href="/concerns/<%= customer_concern.concern_id %>">
 
           <%= customer_concern.concern.name %>
         </a>
 
         <a href="/delete_customer_concern_from_customer/<%= customer_concern.id %>">
-          Delete
+          Remove
         </a>
 
       </li>

@@ -1,94 +1,68 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
-    <h1>
-      Product #<%= @product.id %> details
-    </h1>
+    <h3>
+       Product Details
+    </h3>
+    
+    
+    <div class="row">
+        
+        <div class="col-sm-3">
+          <img src="<%= @product.product_image %>" class="img-fluid" width="300px">
+        </div>
+        
+        <div class="col-sm-9">
+          <UL>
+            <li><%= @product.name.titleize %></li>
+            <li>Category: <% if @product.category.present? %>
+                  <a href="/categories/<%= @product.category_id %>"> <%= @product.category.name %> </a>
+                  <% end %></li>
+            <li>Average Price: <%= number_to_currency(@product.average_price) %></li>
+            <li><a href="<%= @product.purchase_link %>">Purchase Link</a></li>
+          </UL>
+        </div>
+    </div>
+    
+    <div class="row"></div>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <%= render partial: "product_templates/product_product_concerns" %>
+  </div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <%= render partial: "product_templates/product_routine_products" %>
+  </div>
+</div>
+
+
+
 
     <div class="row mb-3">
       <div class="col">
-        <a href="/products" class="btn btn-block btn-outline-secondary">
+        <a href="/products" class="btn btn-block btn-outline-secondary btn-sm">
           Go back
         </a>
       </div>
 
       <div class="col">
-        <a href="/products/<%= @product.id %>/edit" class="btn btn-block btn-outline-secondary">
+        <a href="/products/<%= @product.id %>/edit" class="btn btn-block btn-outline-secondary btn-sm">
           Edit product
         </a>
       </div>
 
       <div class="col">
-        <a href="/delete_product/<%= @product.id %>" class="btn btn-block btn-outline-secondary">
+        <a href="/delete_product/<%= @product.id %>" class="btn btn-block btn-outline-secondary btn-sm">
           Delete product
         </a>
       </div>
     </div>
 
-    <dl>
-      <dt>
-        Name
-      </dt>
-      <dd>
-        <%= @product.name %>
-      </dd>
-
-      <dt>
-        Category
-      </dt>
-      <dd>
-        <% if @product.category.present? %>
-          <a href="/categories/<%= @product.category_id %>">
-            <%= @product.category.name %>
-          </a>
-        <% end %>
-      </dd>
-
-      <dt>
-        Average price
-      </dt>
-      <dd>
-        <%= @product.average_price %>
-      </dd>
-
-      <dt>
-        Product image
-      </dt>
-      <dd>
-        <img src="<%= @product.product_image %>" class="img-fluid">
-      </dd>
-
-      <dt>
-        Purchase link
-      </dt>
-      <dd>
-        <%= @product.purchase_link %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@product.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@product.updated_at) %> ago
-      </dd>
-    </dl>
-  </div>
+</div>
 </div>
 
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "product_templates/product_routine_products" %>
-  </div>
-</div>
 
-<div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <%= render partial: "product_templates/product_product_concerns" %>
-  </div>
-</div>
+
+
