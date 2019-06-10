@@ -12,7 +12,8 @@
       </div>
       
          <div class="col">
-        <a href="mailto:<%= @routine.customer.email %>" class="btn btn-block btn-outline-primary">
+          <a href="/email/<%= @routine.id %>" class="btn btn-block btn-outline-primary">
+        <!--<a href="mailto:<% @routine.customer.email %>" class="btn btn-block btn-outline-primary">-->
           Email Routine
         </a>
       </div>

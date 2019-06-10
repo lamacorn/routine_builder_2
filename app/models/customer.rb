@@ -64,9 +64,12 @@ class Customer < ApplicationRecord
 #  customer.errors.full_messages -->  the errors.fullmessages.each will give your user a list of all of the things are wrong if they are trying to save
 
 def age
-    require 'date'
-    ageInDays = Date.today - self.birthday
-    ageInYears = ageInDays/365
+    if self.birthday
+      require 'date'
+      ageInDays = Date.today - self.birthday
+      ageInYears = ageInDays/365
+    else " "
+    end
     return ageInYears.to_i
 end
 

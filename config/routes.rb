@@ -195,6 +195,9 @@ Rails.application.routes.draw do
   get("/delete_customer/:id_to_remove", { :controller => "customers", :action => "destroy_row" })
 
   #------------------------------
+  
+  #------
+  get("/email/:routine_id", { :controller => "universal", :action => "routine_email" })
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
